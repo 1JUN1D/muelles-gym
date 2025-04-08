@@ -114,9 +114,9 @@
     <!-- End Google Tag Manager (noscript) -->
   <!-- End Google Tag Manager (noscript) -->
   <div id="flyer-overlay">
-    <div class="flyer-content">
+    <div class="flyer-content" onclick="redirectToPromo()">
       <!-- Botón de cierre -->
-      <button class="close-flyer" onclick="closeFlyer()">×</button>
+      <button class="close-flyer" onclick="closeFlyer(); event.stopPropagation()">×</button>
       <!-- Aquí incluye tu flyer. Puedes usar una imagen o el contenido que desees -->
       <img src="./flyer.jpeg" alt="Flyer Promocional" style="width: 100%; display: block;">
     </div>
@@ -160,11 +160,11 @@
     <div class="restaurantemadre">
       <div id="viewer360">
         <div class="niveles">
-          <p style="text-align: center; padding-left: 2px; padding-right: 2px; margin: 0; color: white;">Selecciona<br>el piso</p>
-          <button id="btn-piso-1" class="nivel-boton activo" title="Primer Piso" onclick="changeFloor(1)">1</button>
-          <button id="btn-piso-2" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(2)">2</button>
-          <button id="btn-piso-3" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(3)">3</button>
-          <button id="btn-piso-4" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(4)">4</button>
+          <p style="text-align: center; padding-left: 2px; padding-right: 2px; margin: 0; color: white;">ESTAS EN</p>
+          <button id="btn-piso-1" class="nivel-boton activo" title="Primer Piso" onclick="changeFloor(1)">1°P</button>
+          <button id="btn-piso-2" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(2)">2°P</button>
+          <button id="btn-piso-3" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(3)">3°P</button>
+          <button id="btn-piso-4" class="nivel-boton" title="Segundo Piso" onclick="changeFloor(4)">4°P</button>
         </div>
         <div class="whatsapp-btn" style="display: flex; justify-content: center; align-items: center;">
             <button id="whatsapp-button">
@@ -237,20 +237,26 @@
       window.location.href = 'https://wa.link/rpohv8';
     });
   </script>
-  <script>
-    // Función para cerrar el overlay manualmente
-    function closeFlyer() {
-      const overlay = document.getElementById('flyer-overlay');
-      if (overlay) {
-        overlay.style.display = 'none';
-      }
+<script>
+  // Función para cerrar el overlay manualmente
+  function closeFlyer() {
+    const overlay = document.getElementById('flyer-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
     }
-  
-    // Cierra el flyer automáticamente después de 3 segundos (3000 milisegundos)
-    window.addEventListener('load', function() {
-      setTimeout(closeFlyer, 3000);
-    });
-  </script>
+  }
+
+  // Función para redirigir a la URL del sorteo cuando se clickea el contenedor
+  function redirectToPromo() {
+    window.location.href = "https://www.dondeseria.com/sorteo/template_qr29.html";
+  }
+
+  // Cierra el flyer automáticamente después de 3 segundos (3000 milisegundos)
+  window.addEventListener('load', function() {
+    setTimeout(closeFlyer, 3000);
+  });
+</script>
+
   <!-- Código para inicializar el visor 360 (código existente) -->
   <script type="importmap">
     {
