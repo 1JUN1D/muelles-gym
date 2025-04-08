@@ -113,7 +113,15 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
   <!-- End Google Tag Manager (noscript) -->
-
+  <div id="flyer-overlay">
+    <div class="flyer-content">
+      <!-- Botón de cierre -->
+      <button class="close-flyer" onclick="closeFlyer()">×</button>
+      <!-- Aquí incluye tu flyer. Puedes usar una imagen o el contenido que desees -->
+      <img src="./flyer.jpeg" alt="Flyer Promocional" style="width: 100%; display: block;">
+    </div>
+  </div>
+  
   <!-- NAV -->
   <div class="nav-wrapper">
     <div class="container">
@@ -193,7 +201,7 @@
               Nos especializamos en capturar experiencias únicas con recorridos 360° en restaurantes, gimnasios, bares y más. Nuestro objetivo es promocionar locales y negocios para que lleguen a más personas, mostrando su esencia de una manera inmersiva y atractiva. ¡Explora, conoce y vive lo mejor de cada lugar con nosotros! 🌍✨
             </p>
             <div class="social-list">
-              <a href="https://www.instagram.com/cusig.co/" class="social-item">
+              <a href="https://www.instagram.com/dondeseria/" class="social-item">
                 <i class="bx bxl-instagram"></i>
               </a>
             </div>
@@ -227,6 +235,20 @@
     whatsappButton.addEventListener('click', function(e) {
       e.preventDefault();
       window.location.href = 'https://wa.link/rpohv8';
+    });
+  </script>
+  <script>
+    // Función para cerrar el overlay manualmente
+    function closeFlyer() {
+      const overlay = document.getElementById('flyer-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+    }
+  
+    // Cierra el flyer automáticamente después de 3 segundos (3000 milisegundos)
+    window.addEventListener('load', function() {
+      setTimeout(closeFlyer, 3000);
     });
   </script>
   <!-- Código para inicializar el visor 360 (código existente) -->
